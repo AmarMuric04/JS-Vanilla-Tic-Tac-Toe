@@ -56,7 +56,6 @@ const startGame = function () {
   }, 2000);
 
   /*Declare needed variables */
-  let switchingPlayer;
   let activePlayer = "X";
   let squares;
 
@@ -110,9 +109,7 @@ const startGame = function () {
 
   /*Function used for switching player and symbol*/
   const switchPlayer = function () {
-    switchingPlayer = !switchingPlayer;
-
-    activePlayer = switchingPlayer ? "O" : "X";
+    activePlayer = activePlayer === "X" ? "O" : "X";
   };
 
   /*Function centered around creating draw HTML */
@@ -149,9 +146,7 @@ const startGame = function () {
         board[this.dataset.row][this.dataset.column] = "X";
 
         movesPlayed++;
-
         checkResult(board);
-
         switchPlayer();
       } else {
         this.innerHTML = "O";
