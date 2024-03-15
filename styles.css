@@ -1,0 +1,107 @@
+body {
+  height: 100svh;
+  width: 100vw;
+  background-image: url(https://media.istockphoto.com/id/1409171928/vector/vector-geometric-seamless-pattern-tic-tac-toe-background-with-colorful-elements.jpg?s=612x612&w=0&k=20&c=-ajjhQuE2dMvurrPcS_Oj1Q9-RbfAzR-N6paFM7RxY8=);
+  background-size: contain;
+  background-repeat: repeat;
+
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+#main {
+  width: 40rem;
+  height: 40rem;
+  position: relative;
+  background-color: #222;
+}
+
+#board {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 33.3% 33.4% 33.3%;
+  grid-template-rows: 33.3% 33.4% 33.3%;
+
+  place-items: center;
+}
+
+.square {
+  font-family: "Inter", sans-serif;
+  height: 95%;
+  width: 95%;
+  background-color: white;
+  cursor: pointer;
+  font-size: 10rem;
+  display: grid;
+  place-items: center;
+}
+
+.disabled {
+  pointer-events: none;
+}
+
+#result {
+  font-family: "Inter", sans-serif;
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 0%;
+  height: 0%;
+  background: rgb(244, 223, 176);
+  background: linear-gradient(
+    90deg,
+    rgba(244, 223, 176, 0.8) 15%,
+    rgba(244, 223, 120, 0.8) 100%
+  );
+
+  display: grid;
+  place-items: center;
+  font-size: 5rem;
+
+  transition: all 0.8s;
+
+  overflow: hidden;
+}
+
+.results-showing {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+#result p {
+  position: absolute;
+  left: 50%;
+  top: 37%;
+  text-wrap: nowrap;
+
+  transform: translate(-50%, -50%);
+}
+
+#restart {
+  cursor: pointer;
+
+  padding: 1rem 2rem;
+  border: none;
+
+  background-color: #222;
+  color: white;
+}
+
+#restart:hover {
+  border: 2px solid white;
+  margin: -2px;
+}
+
+#restart:active {
+  background-color: black;
+}
